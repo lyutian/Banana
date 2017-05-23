@@ -5,11 +5,7 @@
 	{% for article in article_list %}
 	<section class="article">
 		<header class="article-header">
-			<h2 class="article-title">
-				<a href="{% url "detail" id=article.id %}" >
-					{{ article.title }}
-				</a>
-			</h2>
+			<h2 class="article-title">{{ article.title }}</h2>
 			<p class="article-meta">
 				Time:  <a class="article-time" href="#">{{ article.date_time }}</a>
 				<a class="article-category" href="#">{{ article.category }}</a>
@@ -17,13 +13,8 @@
 		</header>
 		<div class="article-content">
 			<p>
-				{{ article.content |truncatewords_html:100 }}
+				{{ article.content }}
 			</p>
-			<a class="btn btn-primary" href="{% url "detail" id=article.id %}">
-				Read More
-				<span class="glyphicon glyphicon-chevron-right">
-				</span>
-			</a>
 		</div>
 	</section>
 	{% endfor %}
