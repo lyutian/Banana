@@ -17,7 +17,7 @@
 		</header>
 		<div class="article-content">
 			<p>
-				{{ article.content |truncatewords_html:100 }}
+				{{ article.content | safe | truncatewords_html:100 }}
 			</p>
 			<a class="btn btn-primary" href="{% url "detail" id=article.id %}">
 				Read More
